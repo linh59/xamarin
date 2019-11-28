@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="xamarin_tabs_carousel.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <OnPlatform x:TypeArguments="x:String" x:Key="BoldFont">
+                <On Platform="Android" Value="OpenSans-Bold.ttf#Open Sans" />
+                <On Platform="iOS" Value="OpenSans-Bold" />
+            </OnPlatform>
+            <OnPlatform x:TypeArguments="x:String" x:Key="ItalicFont">
+                <On Platform="Android" Value="OpenSans-Italic.ttf#Open Sans" />
+                <On Platform="iOS" Value="OpenSans-Italic" />
+            </OnPlatform>
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+            <Color x:Key="txtColor">Blue</Color>
+            <Color x:Key="txtBgColor">Red</Color>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="green"></Setter>
+                <Setter Property="LineHeight" Value="0"></Setter>
+            </Style>
+
+            <ControlTemplate x:Key="ThemeMaster">
+                <StackLayout BackgroundColor="blue">
+                    <Label Text="Master page"></Label>
+                    <ContentPresenter></ContentPresenter>
+
+                </StackLayout>
+            </ControlTemplate>
+
+            <ControlTemplate x:Key="ThemeMaster2">
+                <StackLayout BackgroundColor="green">
+                    <Label Text="Master page 2"></Label>
+                    <ContentPresenter></ContentPresenter>
+                </StackLayout>
+            </ControlTemplate>
+        </ResourceDictionary>
+
+    </Application.Resources>
+    
+</Application>

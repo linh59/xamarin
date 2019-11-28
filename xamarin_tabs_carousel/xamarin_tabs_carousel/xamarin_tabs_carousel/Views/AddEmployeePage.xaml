@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+              xmlns:local1="clr-namespace:xamarin_tabs_carousel.ViewModels"
+             x:Class="xamarin_tabs_carousel.Views.AddEmployeePage">
+    
+    <ContentPage.BindingContext>
+        <local1:EmployeeListModel></local1:EmployeeListModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Emplyee Name" Text="{Binding Employee.DisplayName}"></Entry>
+            <Button Text="Save" Clicked="Button_Clicked"  ></Button>
+
+            <!--<Button Text="Save"  Command="{Binding AddEmployeeCommand}" ></Button>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

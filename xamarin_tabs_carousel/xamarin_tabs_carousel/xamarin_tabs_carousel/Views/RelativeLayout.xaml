@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="xamarin_tabs_carousel.Views.RelativeLayout">
+    <ContentPage.Content>
+        <RelativeLayout x:Name="container">
+            <BoxView x:Name="boxView" 
+            WidthRequest="50" 
+            HeightRequest="50" Color="Green" 
+            RelativeLayout.XConstraint=
+                    "{ConstraintExpression 
+                        Type=RelativeToParent,
+                        Property=Width, 
+                        Factor=0.5,
+                        Constant=-25
+                        }"  />
+
+            
+            <StackLayout   
+                WidthRequest="200" 
+                HeightRequest="100"
+                BackgroundColor="MistyRose"
+                RelativeLayout.XConstraint=
+                    "{ConstraintExpression 
+                        Type=RelativeToParent,
+                        Property=Width, 
+                        Factor=0.2}"
+                RelativeLayout.YConstraint=
+                     "{ConstraintExpression
+                        Type=RelativeToParent,
+                        Property=Height,
+                        Factor=0.5,
+                        Constant=-25
+                        }" >
+                <BoxView x:Name="boxView1" 
+                        WidthRequest="50" 
+                        HeightRequest="50" 
+                        Color="LimeGreen"
+
+                />
+                <Label Text="Welcome to Relative layout page"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" BackgroundColor="#444"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.40}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.60}" >
+
+                <Label Text="Test1" BackgroundColor="#f00" VerticalOptions="CenterAndExpand"/>
+                <Label Text="Test2" BackgroundColor="#0f0" VerticalOptions="CenterAndExpand"/>
+                <Label Text="Test3" BackgroundColor="#00f" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

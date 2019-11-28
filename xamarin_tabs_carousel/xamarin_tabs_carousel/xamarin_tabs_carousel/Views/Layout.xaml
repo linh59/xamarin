@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="xamarin_tabs_carousel.Views.Layout">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <AbsoluteLayout x:Name="ParentLayout" BackgroundColor="White">
+                    <BoxView Color="Blue"
+                 AbsoluteLayout.LayoutBounds="0,0,2,150"
+                 AbsoluteLayout.LayoutFlags="WidthProportional"  />
+                    <BoxView Color="Gray"
+                 AbsoluteLayout.LayoutBounds="0.5,100,100,100"
+                 AbsoluteLayout.LayoutFlags="XProportional"/>
+                    <BoxView Color="white"
+                 AbsoluteLayout.LayoutBounds="0.5,105,90,90"
+                 AbsoluteLayout.LayoutFlags="XProportional"/>
+                    <Label Text="User name"
+                   AbsoluteLayout.LayoutBounds="0.5, 200,1,40"
+                   AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"
+                   HorizontalTextAlignment="Center"></Label>
+
+                    <AbsoluteLayout x:Name="iconlayout" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Padding="5">
+                        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0.5, 235,1,40" AbsoluteLayout.LayoutFlags="WidthProportional" BackgroundColor="Gray">
+                            <BoxView AbsoluteLayout.LayoutBounds="60,5,30,30" BackgroundColor="White"></BoxView>
+                            <BoxView AbsoluteLayout.LayoutBounds="100,5,30,30" BackgroundColor="White"></BoxView>
+                            <BoxView AbsoluteLayout.LayoutBounds="140,5,30,30" BackgroundColor="White"></BoxView>
+                            <BoxView AbsoluteLayout.LayoutBounds="180,5,30,30" BackgroundColor="White"></BoxView>
+                            <BoxView AbsoluteLayout.LayoutBounds="220,5,30,30" BackgroundColor="White"></BoxView>
+                        </AbsoluteLayout>
+                        <AbsoluteLayout BackgroundColor="AliceBlue"
+                                AbsoluteLayout.LayoutBounds="0,290,1,140"
+                                AbsoluteLayout.LayoutFlags="XProportional,WidthProportional">
+                        </AbsoluteLayout>
+                    </AbsoluteLayout>
+
+                </AbsoluteLayout>
+                <CarouselView x:Name="EmployeeView" ItemsSource="{Binding Employees}"  HeightRequest="200">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame BorderColor="Gray" Margin="8" HasShadow="True" HeightRequest="200" WidthRequest="250" CornerRadius="20">
+                                    <StackLayout>
+                                        <Image Source="{Binding ImagePath}" WidthRequest="100"/>
+                                        <Label Text="{Binding DisplayName}" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+
+                <Grid RowSpacing="0" ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200" />
+                        <RowDefinition Height="200" />
+                    </Grid.RowDefinitions>
+                    <StackLayout 
+                         Grid.Column="0" 
+                         Grid.Row="0"
+                         HorizontalOptions="Center"
+                         BackgroundColor="Silver">
+                        <Label
+                                           Text="Col 1, Row 0" 
+                                           FontSize="24" 
+                                           FontAttributes="Bold" 
+                                           
+                           BackgroundColor="Red"/>
+                        <Label 
+                                           Text="Col 1, Row 0" 
+                                           FontSize="24" 
+                                           FontAttributes="Bold" 
+                                           HorizontalTextAlignment="Center"
+                           BackgroundColor="Red"/>
+                    </StackLayout>
+
+                    <StackLayout
+                         Grid.Column="1" 
+                         Grid.Row="0"
+                         HorizontalOptions="Center"
+                         BackgroundColor="Silver">
+                        <Label Grid.Column="1" Grid.Row="0"
+                                           Text="Col 2, Row 1" 
+                                           FontSize="24" 
+                                           FontAttributes="Bold"/>
+                        <Label Grid.Column="1" Grid.Row="0"
+                                           Text="Col 2, Row 1" 
+                                           FontSize="24" 
+                                           FontAttributes="Bold" 
+                                           HorizontalTextAlignment="Center"/>
+
+
+                    </StackLayout>
+                    <StackLayout 
+                         Grid.Column="0" 
+                         Grid.Row="1"
+                         HorizontalOptions="Center"
+                         BackgroundColor="Silver">
+                        <Label
+                                           Text="Col 1, Row 2" 
+                                           FontSize="24" 
+                                           FontAttributes="Bold" 
+                                           HorizontalTextAlignment="Center"
+                           BackgroundColor="Red"/>
+                        <Label 
+                                           Text="Col 1, Row 2" 
+                                           FontSize="24" 
+                                           FontAttributes="Bold" 
+                                           HorizontalTextAlignment="Center"
+                           BackgroundColor="Red"/>
+                    </StackLayout>
+
+                    <StackLayout 
+                         Grid.Column="0" 
+                         Grid.Row="1"
+                         HorizontalOptions="Center"
+                         BackgroundColor="Purple">
+                        <Label
+                                           Text="Col 2, Row 2" 
+                                           FontSize="24" 
+                                           FontAttributes="Bold" 
+                                           HorizontalTextAlignment="Center"
+                           BackgroundColor="Red"/>
+                        <Label 
+                                           Text="Col 2, Row 2" 
+                                           FontSize="24" 
+                                           FontAttributes="Bold" 
+                                           HorizontalTextAlignment="Center"
+                           BackgroundColor="Red"/>
+                    </StackLayout>
+                    <!--<BoxView Color="Silver"
+                         Grid.Column="1" 
+                         Grid.Row="0"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Center"
+                         BackgroundColor="Silver"/>
+                <Label x:Name="ControlLabel2" Grid.Column="1" Grid.Row="0"
+                                           Text="Col 2, Row 0" 
+                                           FontSize="24" 
+                                           FontAttributes="Bold" 
+                                           HorizontalTextAlignment="Center"/>-->
+
+
+                </Grid>
+             
+            </StackLayout>
+
+        </ScrollView>
+
+      
+    </ContentPage.Content>
+</ContentPage>
